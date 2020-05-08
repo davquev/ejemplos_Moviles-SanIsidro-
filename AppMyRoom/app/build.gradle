@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+//agregamos este plugin
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -27,6 +28,7 @@ android {
 }
 
 dependencies {
+    //agregamos estas dependencias
     def room_version = "2.2.3"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"

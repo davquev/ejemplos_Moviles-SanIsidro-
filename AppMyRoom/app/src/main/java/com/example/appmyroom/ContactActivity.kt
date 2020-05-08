@@ -31,7 +31,7 @@ class ContactActivity : AppCompatActivity() {
         }
     }
 
-    //metodo q gestiona si voy a grabar o borrar
+    ////codigo cuando se presiona grabar o borrar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.itemSave -> {
@@ -61,6 +61,7 @@ class ContactActivity : AppCompatActivity() {
 
         //contact = Contact(null, name, telephone)
 
+        //es un contacto nuevo o ya existe?
         if (contact.id != null){
             AppDatabase.getInstance(this).getDao().updateContact(contact)
         }
@@ -70,6 +71,7 @@ class ContactActivity : AppCompatActivity() {
         finish()
     }
 
+    //cargar el ícono "grabar y borrar"
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater : MenuInflater = menuInflater
         inflater.inflate(R.menu.contact_menu, menu)
